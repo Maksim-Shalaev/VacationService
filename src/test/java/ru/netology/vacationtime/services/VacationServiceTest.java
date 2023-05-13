@@ -10,7 +10,10 @@ public class VacationServiceTest {
 
     @ParameterizedTest
     @CsvSource({
-            "2, 100000, 60000, 150000"
+            "2, 100000, 60000, 150000",
+            "3, 10000, 3000, 20000",
+            "0, 0, 10000, 30000",
+            "1, 1000, 0, 11000"
     })
     public void testFromTask1(int expected, int income, int expense, int threshold) {
         VacationService service = new VacationService();
@@ -18,13 +21,6 @@ public class VacationServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-
-//    @CsvSource({
-//            "2, 100000, 60000, 150000",
-//            "3, 10000, 3000, 20000",
-//            "0, 0, 10000, 30000",
-//            "1, 1000, 0, 11000"
-//    })
 //    @Test
 //    public void testFromTask1() {
 //        VacationService service = new VacationService();
